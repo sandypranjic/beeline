@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://kit.fontawesome.com/2a20f3910e.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://use.typekit.net/tuz2inw.css">
+  <link rel="stylesheet" href="styles/style.css">
+  <title>Beeline | Find a bike share near you</title>
+</head>
+
+<body>
+  <nav class="mobileOnly slideOutMobileNav">
+    <div class="exitMenu">
+      <button class="exitMenuButton" tabIndex="0">
+          <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <ul>
+      <li><a href="./about.html">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <nav class="wrapper">
+    <div class="logo">
+      <a href="#">beeline</a>
+    </div>
+    <div class="navLinks">
+      <a href="./about.html">About</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="mobileOnly openMenu">
+      <button class="openMenuButton" tabindex="0">
+          <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+  <header>
+
+    <div class="headerTagLine wrapper">
+      <h1>Find the closest bike share location to you.</h1>
+    </div>
+
+    <div class="headerImage">
+      <img src="assets/bike.svg" alt="">
+    </div>
+
+    <div class="headerText wrapper">
+      <div class="innerWrapper">
+        <p>Beeline is a small web-based app that provides individuals with Toronto’s live bike share information to help users make a beeline for their next destination!</p>
+        <p>Enter your starting location below and how many bikes you will need - it’s great
+        to travel in groups! Afterwards, you’re going to need to park your bike, so don’t forget to enter your destination and the number of spots you will need to find the nearest available docks around your endpoint.
+        </p>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrapper">
+    <section class="userInput innerWrapper">
+      <h2>Enter Your Location and Destination</h2>
+
+      <form class="userInput">
+
+        <div class="startingLocationContainer">
+          <div class="startingLocation">
+            <label for="startingLocationInput">
+              <h3>Starting Point</h3>
+            </label>
+            <input id="startingLocationInput" class="startingLocationInput" placeholder="Enter your starting location"
+              value="">
+          </div>
+          <div class="numberOfBikes">
+            <label for="numberOfBikesInput">
+              <h3>Number of Bikes Needed</h3>
+            </label>
+            <select id="numberOfBikesInput" class="numberOfBikesInput">
+              <option value="placeholder">Select number...</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="endLocationContainer">
+          <div class="endLocation">
+            <label for="endLocationInput">
+              <h3>End Point</h3>
+            </label>
+            <input id="endLocationInput" class="endLocationInput" placeholder="Enter your destination" value="">
+          </div>
+          <div class="numberOfDocks">
+            <label for="numberOfDocksInput">
+              <h3>Number of Docks Needed</h3>
+            </label>
+            <select id="numberOfDocksInput" class="numberOfDocksInput">
+              <option value="placeholder">Select number...</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="submitButtonContainer">
+          <a href="#toggleResults"><button class="submitUserInput" type="submit">Submit</button></a>
+        </div>
+      </form>
+    </section>
+
+    <!-- RESULTS SECTION -->
+    <div class="resultsSection">
+      <section id="toggleResults" class="toggleResults">
+        <div class="toggleResultsContainer toggleResultsContainerHideOnLoad">
+          <div class="startingPoint">
+            <button class="startingPointButton activeButton">Starting Point</button>
+          </div>
+          <div class="endPoint">
+            <button class="endPointButton">End Point</button>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="errorHandling innerWrapper">
+      </section>
+
+
+      <div class="noBikesError">
+                      
+      </div>
+
+      <section id="results" class="results innerWrapper activeResults">
+
+
+      </section>
+
+      <div class="noDocksError">
+                    
+      </div>
+  
+
+      <section class="endResults innerWrapper">
+
+      </section>
+    </div>
+
+  </main>
+
+  <footer>
+    <small>Copyright &copy; 2019 Sandy Pranjic and Sharon Yi. All Rights Reserved </small>
+  </footer>
+
+  <script src='https://code.jquery.com/jquery-3.4.0.min.js'
+    integrity='sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=' crossorigin='anonymous'></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
