@@ -1,0 +1,322 @@
+@import "mediaQueries";
+
+form {
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+  @include mobile {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .startingLocationContainer,
+  .endLocationContainer {
+    width: calc(50% - 10px);
+    @include mobile {
+      width: 100%;
+    }
+
+    .startingLocation,
+    .endLocation {
+      width: 100%;
+    }
+
+    .startingLocation,
+    .numberOfBikes {
+      padding-right: 25px;
+      @include tablet {
+        padding-right: 10px;
+      }
+      @include mobile {
+        padding-right: 0;
+      }
+    }
+
+    .endLocation,
+    .numberOfDocks {
+      padding-left: 25px;
+      @include tablet {
+        padding-left: 10px;
+      }
+      @include mobile {
+        padding-left: 0;
+      }
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding-left: 10px;
+    }
+  }
+
+  select,
+  input {
+    border: 2px solid $border;
+    border-radius: 5px;
+    font-size: 1.8rem;
+    padding: 8px 0 8px 5px;
+    color: $mediumGrey;
+  }
+
+  select {
+    background: url(../assets/arrow2.svg) no-repeat right center;
+    background-size: 2.8rem auto, 100%;
+    background-color: $white;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .submitButtonContainer {
+    width: 100%;
+    margin: 20px auto 25px auto;
+    text-align: center;
+
+    .submitUserInput {
+      text-transform: uppercase;
+      @include headerText;
+      letter-spacing: 2px;
+      font-size: 2rem;
+      padding: 8px 40px;
+      background-color: $seaGreen;
+      color: $white;
+      border: 2px solid rgb(35, 117, 104);
+      border-radius: 8px;
+    }
+    .submitUserInput:hover,
+    .submitUserInput:focus {
+      background-color: rgb(35, 117, 104);
+      border: 2px solid rgb(22, 83, 60);
+      transition: all 0.5s ease;
+    }
+  }
+}
+
+.userInput {
+  h2 {
+    font-size: 4rem;
+    text-align: center;
+    color: $seaGreen;
+    letter-spacing: 4px;
+    padding-bottom: 20px;
+    @include tablet {
+      font-size: 3.5rem;
+    }
+    @include mobile {
+      font-size: 3rem;
+      letter-spacing: 2px;
+    }
+    @include smallMobile {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
+  }
+
+  h3 {
+    font-size: 2.3rem;
+    letter-spacing: 2px;
+    color: $seaGreen;
+    margin-bottom: 10px;
+    @include smallDesktop {
+      font-size: 2rem;
+    }
+  }
+
+  .startingLocation,
+  .numberOfBikes,
+  .numberOfDocks,
+  .endLocation {
+    margin: 30px 0;
+  }
+}
+
+.startingStation,
+.endStation {
+  border: 2px solid $border;
+  background-color: $white;
+  width: 100%;
+  margin: 0 auto 30px 0;
+  padding: 40px 70px 40px 90px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  @include mobile {
+    flex-direction: column;
+    padding: 40px 10px 0 10px;
+  }
+
+  .startingStationLocation,
+  .endStationLocation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 70%;
+    padding-right: 10px;
+    @include mobile {
+      justify-content: center;
+      width: 100%;
+    }
+
+    .stationName {
+      @include headerText;
+      color: $redOrange;
+      font-size: 2.3rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      line-height: 1.5;
+      padding-bottom: 10px;
+      @include mobile {
+        text-align: center;
+        padding-bottom: 15px;
+      }
+    }
+
+    .distance, .openInMaps {
+      font-size: 2rem;
+      color: $lightGrey;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+      @include mobile {
+        text-align: center;
+      }
+    }
+  }
+
+  .startingStationBikesAvailable,
+  .endStationDocksAvailable {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    padding-left: 10px;
+    @include mobile {
+      padding: 0 0 30px 0;
+      width: 100%;
+    }
+
+    .bikesAvailable,
+    .docksAvailable {
+      @include headerText;
+      letter-spacing: 2px;
+      font-size: 4rem;
+      color: $seaGreen;
+    }
+
+    .bikesAvailableText,
+    .docksAvailableText {
+      font-size: 2rem;
+      color: $lightGrey;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+  }
+}
+
+.toggleResults {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 0 50px 0;
+  @include mobile {
+    padding: 0;
+    margin: 40px 0 0 0;
+  }
+  .toggleResultsContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    button {
+      text-transform: uppercase;
+      @include headerText;
+      letter-spacing: 2px;
+      font-size: 2rem;
+      color: $lightGrey;
+      padding: 10px;
+      width: 250px;
+      background-color: #e9e9e9;
+      border: 2px solid #cdcdcd;
+      @include mobile {
+        font-size: 1.6rem;
+        width: 100%;
+        padding: 10px 20px;
+      }
+    }
+    .startingPointButton {
+      border-radius: 50px 0 0 50px;
+    }
+    .endPointButton {
+      border-radius: 0px 50px 50px 0px;
+    }
+    button.activeButton {
+      background-color: $seaGreen;
+      border: 2px solid rgb(35, 117, 104);
+      color: $white;
+    }
+    button:hover,
+    button:focus {
+      background-color: #cacaca;
+      border-color: #969696;
+      transition: all 0.5s ease;
+    }
+    button.activeButton:hover,
+    button.activeButton:focus {
+      background-color: rgb(35, 117, 104);
+      border: 2px solid rgb(22, 83, 60);
+      transition: all 0.5s ease;
+    }
+  }
+  .toggleResultsContainerHideOnLoad {
+    display: none;
+  }
+}
+
+.endResults {
+  display: none;
+}
+
+.activeResults {
+  display: block;
+}
+
+.inactiveResults {
+  display: none;
+}
+
+.errorHandling, .resultsErrorHandling, .endResultsErrorHandling, .noBikesError, .noDocksError {
+  width: 100%;
+  margin: 100px auto;
+  text-align: center;
+
+  span {
+    @include logoText;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    color: $redOrange;
+  }
+}
+
+
+footer {
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px 20px;
+  text-align: center;
+  background-color: #a3caa9;
+  small {
+    color: $white;
+    font-size: 1.7rem;
+    @include mobile {
+        font-size: 1.4rem;
+      }
+  }
+}

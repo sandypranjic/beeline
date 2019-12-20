@@ -1,0 +1,68 @@
+@import "mediaQueries";
+
+body {
+  overflow-x: hidden;
+}
+
+body, div, section, img, h1, h2, h3, p, span, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+h2, h3 {
+  @include headerText;
+  text-transform: uppercase;
+}
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+p {
+  font-size: 2rem;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
+body {
+  @include bodyText;
+  color: $black;
+}
+
+.wrapper {
+  width: 80%;
+  max-width: 1400px;
+  margin: 0 auto;
+  @include smallDesktop {
+    width: 90%;
+  }
+}
+
+.innerWrapper {
+  width: 80%;
+  margin: 0 auto;
+  @include smallDesktop {
+    width: 90%;
+  }
+  @include tablet {
+    width: 100%;
+      }
+}
+
+.mobileOnly {
+  display: none;
+  @include tablet {
+    display: block;
+  }
+}
+
+
+

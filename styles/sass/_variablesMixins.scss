@@ -1,0 +1,27 @@
+// COLOUR VARIABLES
+$black: #000;
+$white: #fff;
+$lightGrey: #999;
+$mediumGrey: #666;
+$border: #ebebe7;
+$redOrange: #d6622c;
+$seaGreen: #62a5a3;
+
+
+@mixin bodyText {
+  font-family: source-sans-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin logoText {
+  font-family: halyard-display, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin headerText {
+  font-family: halyard-display, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
